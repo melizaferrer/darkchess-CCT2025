@@ -28,7 +28,6 @@ public class StoryDatastore {
         return d.createQuery(Story.class).field("level").equal(level).get();
     }
     public class Constants {
-    public static final String EMPTY_ROW = "        ";
     public static final String WHITE_PAWNS_ROW = "PPPPPPPP";
     public static final String BLACK_PAWNS_ROW = "pppppppp";
     public static final String LINE_BREAK = "\n";
@@ -49,10 +48,10 @@ public class StoryDatastore {
         String[] layout ={
             "    K   ", 
             Constants.WHITE_PAWNS_ROW,
-            Constants.EMPTY_ROW,
-            Constants.EMPTY_ROW,
-            Constants.EMPTY_ROW,
-            Constants.EMPTY_ROW,
+             "        ",
+            "        ",
+            "        ",
+            "        ",
             Constants.BLACK_PAWNS_ROW,
             "    k   "}; 
 
