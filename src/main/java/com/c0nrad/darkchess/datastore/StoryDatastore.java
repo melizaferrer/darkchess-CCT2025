@@ -36,27 +36,57 @@ public class StoryDatastore {
 
         // Constantes para filas vacías comunes
         public static final String EMPTY_ROW_1 = EMPTY_ROW;
-        public static final String EMPTY_ROW_2 = EMPTY_ROW;
-        public static final String EMPTY_ROW_3 = EMPTY_ROW;
-        public static final String EMPTY_ROW_4 = EMPTY_ROW;
-        public static final String EMPTY_ROW_5 = EMPTY_ROW;
-        public static final String EMPTY_ROW_6 = EMPTY_ROW;
-        public static final String EMPTY_ROW_7 = EMPTY_ROW;
-        public static final String EMPTY_ROW_8 = EMPTY_ROW;
-        public static final String EMPTY_ROW_9 = EMPTY_ROW;
-        public static final String EMPTY_ROW_10 = EMPTY_ROW;
-        public static final String EMPTY_ROW_11 = EMPTY_ROW;
-        public static final String EMPTY_ROW_12 = EMPTY_ROW;
-        public static final String EMPTY_ROW_13 = EMPTY_ROW;
-        public static final String EMPTY_ROW_14 = EMPTY_ROW;
-        public static final String EMPTY_ROW_15 = EMPTY_ROW;
-        public static final String EMPTY_ROW_16 = EMPTY_ROW;
-        public static final String EMPTY_ROW_17 = EMPTY_ROW;
-        public static final String EMPTY_ROW_18 = EMPTY_ROW;
-        public static final String EMPTY_ROW_19 = EMPTY_ROW;
-        public static final String EMPTY_ROW_20 = EMPTY_ROW;
-        public static final String EMPTY_ROW_21 = EMPTY_ROW;
-        public static final String EMPTY_ROW_22 = EMPTY_ROW;
+
+        public static final String[] layout ={
+            "    K   ", 
+            Constants.WHITE_PAWNS_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            Constants.BLACK_PAWNS_ROW,
+            "    k   " 
+       };
+        public static final String[] layout2 ={
+            "   NKN  ", 
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            "   nkn  "}; 
+
+       public static final String[] layout3 ={
+            "RNBQKBNR", 
+            Constants.WHITE_PAWNS_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            Constants.BLACK_PAWNS_ROW,
+            "rnb kbnr"}; 
+       
+        public static final String[] layout4 ={
+            "PPPPKPPP", 
+            Constants.WHITE_PAWNS_ROW,
+            Constants.WHITE_PAWNS_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            "rnbqkbnr"}; 
+        
+       public static final String[] layout5 ={
+            "RNBQKBNR", 
+            Constants.WHITE_PAWNS_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            EMPTY_ROW,
+            Constants.BLACK_PAWNS_ROW,
+            "rnbqkbnr"}; 
+    
     } 
     
     public static void SeedLevels() throws InvalidBoardException, InvalidPieceException{
@@ -69,24 +99,13 @@ public class StoryDatastore {
         "\n"+
         "Can you break through the wall of pawns and kill the opposing commander?\n" +
         "\n"+
-        "The fate of our people depends on you.";
-
-        String[] layout ={
-            "    K   ", 
-            Constants.WHITE_PAWNS_ROW,
-            Constants.EMPTY_ROW_1,
-            Constants.EMPTY_ROW_2,
-            Constants.EMPTY_ROW_3,
-            Constants.EMPTY_ROW_4,
-            Constants.BLACK_PAWNS_ROW,
-            "    k   "};
-
-        Board b = new Board(layout);
+        "The fate of our people depends on you.";      
+        
+        Board b = new Board(Constants.layout);
 
         s1.startingboard = b;
         s1.blackPlayer = PlayerType.RANDBOT;
         d.save(s1);
-
 
         //---------- LEVEL 2 ---------
         Story s2 = new Story();
@@ -96,17 +115,7 @@ public class StoryDatastore {
         "\n"+
         "Can you find and kill the enemy king before being assassinated??\n";
 
-        String[] layout2 ={
-            "   NKN  ", 
-            Constants.EMPTY_ROW_5,
-            Constants.EMPTY_ROW_6,
-            Constants.EMPTY_ROW_7,
-            Constants.EMPTY_ROW_8,
-            Constants.EMPTY_ROW_9,
-            Constants.EMPTY_ROW_10,
-            "   nkn  "}; 
-
-        Board b2 = new Board(layout2);
+        Board b2 = new Board(Constants.layout2);
 
         s2.startingboard = b2;
         s2.blackPlayer = PlayerType.KILLBOT;
@@ -120,17 +129,7 @@ public class StoryDatastore {
         "\n"+
         "Hurry before it's too late!?\n";
 
-        String[] layout3 ={
-            "RNBQKBNR", 
-            "PPPPPPPP",
-            Constants.EMPTY_ROW_11,
-            Constants.EMPTY_ROW_12,
-            Constants.EMPTY_ROW_13,
-            Constants.EMPTY_ROW_14,
-            "pppppppp",
-            "rnb kbnr"}; 
-
-        Board b3 = new Board(layout3);
+        Board b3 = new Board(Constants.layout3);
 
         s3.startingboard = b3;
         s3.blackPlayer = PlayerType.RANDBOT;
@@ -144,17 +143,7 @@ public class StoryDatastore {
         "\n"+
         "Kill the peasants and their leader before they get to us!?\n";
 
-        String[] layout4 ={
-            "PPPPKPPP", 
-            "PPPPPPPP",
-            "PPPPPPPP",
-            Constants.EMPTY_ROW_15,
-            Constants.EMPTY_ROW_16,
-            Constants.EMPTY_ROW_17,
-            Constants.EMPTY_ROW_18,
-            "rnbqkbnr"}; 
-
-        Board b4 = new Board(layout4);
+        Board b4 = new Board(Constants.layout4);
 
         s4.startingboard = b4;
         s4.blackPlayer = PlayerType.PAWNPUSHERBOT;
@@ -166,17 +155,7 @@ public class StoryDatastore {
         s5.level = 5;
         s5.description = "Commander. This is it. We've recieved word from our scouts that the strong nation in the lands is trying to take over our village. Can you defend the city?\n";
 
-        String[] layout5 ={
-            "RNBQKBNR", 
-            "PPPPPPPP",
-            Constants.EMPTY_ROW_19,
-            Constants.EMPTY_ROW_20,
-            Constants.EMPTY_ROW_21,
-            Constants.EMPTY_ROW_22,
-            "pppppppp",
-            "rnbqkbnr"}; 
-
-        Board b5 = new Board(layout5);
+        Board b5 = new Board(Constants.layout5);
 
         s5.startingboard = b5;
         s5.blackPlayer = PlayerType.KILLBOT;
