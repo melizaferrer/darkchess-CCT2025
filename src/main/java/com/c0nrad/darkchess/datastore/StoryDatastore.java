@@ -33,16 +33,13 @@ public class StoryDatastore {
         public static final String BLACK_PAWNS_ROW = "pppppppp";
         public static final String LINE_BREAK = "\n";
         public static final String EMPTY_ROW = "        ";
-    }
-    
-    // Método auxiliar para crear filas vacías múltiples
-    private static String[] createEmptyRows(int count) {
-        String[] emptyRows = new String[count];
-        for (int i = 0; i < count; i++) {
-            emptyRows[i] = Constants.EMPTY_ROW;
-        }
-        return emptyRows;
-    }
+
+        // Constantes para filas vacías comunes
+        public static final String EMPTY_ROW_1 = EMPTY_ROW;
+        public static final String EMPTY_ROW_2 = EMPTY_ROW;
+        public static final String EMPTY_ROW_3 = EMPTY_ROW;
+        public static final String EMPTY_ROW_4 = EMPTY_ROW;
+    }  
     
     public static void SeedLevels() throws InvalidBoardException, InvalidPieceException{
         Datastore d = MorphiaSingleton.GetDatastore();
@@ -59,7 +56,10 @@ public class StoryDatastore {
         String[] layout ={
             "    K   ", 
             Constants.WHITE_PAWNS_ROW,
-            createEmptyRows(4),
+            Constants.EMPTY_ROW_1,
+            Constants.EMPTY_ROW_2,
+            Constants.EMPTY_ROW_3,
+            Constants.EMPTY_ROW_4,
             Constants.BLACK_PAWNS_ROW,
             "    k   "};
 
