@@ -28,10 +28,19 @@ public class StoryDatastore {
         return d.createQuery(Story.class).field("level").equal(level).get();
     }
     public class Constants {
+    public static final String EMPTY_ROW = "        ";
     public static final String WHITE_PAWNS_ROW = "PPPPPPPP";
     public static final String BLACK_PAWNS_ROW = "pppppppp";
     public static final String LINE_BREAK = "\n";
 }
+    // Método auxiliar para crear filas vacías múltiples
+    private static String[] createEmptyRows(int count) {
+        String[] emptyRows = new String[count];
+        for (int i = 0; i < count; i++) {
+            emptyRows[i] = Constants.EMPTY_ROW;
+        }
+        return emptyRows;
+    }
 
     public static void SeedLevels() throws InvalidBoardException, InvalidPieceException{
         Datastore d = MorphiaSingleton.GetDatastore();
@@ -48,10 +57,7 @@ public class StoryDatastore {
         String[] layout ={
             "    K   ", 
             Constants.WHITE_PAWNS_ROW,
-             "        ",
-            "        ",
-            "        ",
-            "        ",
+            createEmptyRows(6),
             Constants.BLACK_PAWNS_ROW,
             "    k   "}; 
 
