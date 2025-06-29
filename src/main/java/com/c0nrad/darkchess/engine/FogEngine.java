@@ -181,7 +181,7 @@ public class FogEngine {
             logger.error("something went very wrong {}", ex);
             return null;    
         }
-
+        
         // We have to special case Pawns because they can see ahead of them, but not move there.
         // We also allow them to see diag, even if they can't necessarily move there (empty)
         if (piece.type == PieceType.PAWN) {
@@ -220,16 +220,6 @@ public class FogEngine {
                         possibleMoves.add(upTwo);
                     }
                 } catch (InvalidPositionException ex) {}
-
-                // try {
-                //     Position left = new Position(p.x - 1, p.y + 1);
-                //     possibleMoves.add(left);
-                // } catch (InvalidPositionException ex) {}
-
-                // try {
-                //     Position right = new Position(p.x + 1, p.y + 1 );
-                //     possibleMoves.add(right);
-                // } catch (InvalidPositionException ex) {}
             }  
         }
 
