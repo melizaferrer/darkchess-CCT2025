@@ -39,7 +39,25 @@ public class StoryDatastore {
         public static final String EMPTY_ROW_2 = EMPTY_ROW;
         public static final String EMPTY_ROW_3 = EMPTY_ROW;
         public static final String EMPTY_ROW_4 = EMPTY_ROW;
-    }  
+        public static final String EMPTY_ROW_5 = EMPTY_ROW;
+        public static final String EMPTY_ROW_6 = EMPTY_ROW;
+        public static final String EMPTY_ROW_7 = EMPTY_ROW;
+        public static final String EMPTY_ROW_8 = EMPTY_ROW;
+        public static final String EMPTY_ROW_9 = EMPTY_ROW;
+        public static final String EMPTY_ROW_10 = EMPTY_ROW;
+        public static final String EMPTY_ROW_11 = EMPTY_ROW;
+        public static final String EMPTY_ROW_12 = EMPTY_ROW;
+        public static final String EMPTY_ROW_13 = EMPTY_ROW;
+        public static final String EMPTY_ROW_14 = EMPTY_ROW;
+        public static final String EMPTY_ROW_15 = EMPTY_ROW;
+        public static final String EMPTY_ROW_16 = EMPTY_ROW;
+        public static final String EMPTY_ROW_17 = EMPTY_ROW;
+        public static final String EMPTY_ROW_18 = EMPTY_ROW;
+        public static final String EMPTY_ROW_19 = EMPTY_ROW;
+        public static final String EMPTY_ROW_20 = EMPTY_ROW;
+        public static final String EMPTY_ROW_21 = EMPTY_ROW;
+        public static final String EMPTY_ROW_22 = EMPTY_ROW;
+    } 
     
     public static void SeedLevels() throws InvalidBoardException, InvalidPieceException{
         Datastore d = MorphiaSingleton.GetDatastore();
@@ -80,12 +98,12 @@ public class StoryDatastore {
 
         String[] layout2 ={
             "   NKN  ", 
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
+            Constants.EMPTY_ROW_5,
+            Constants.EMPTY_ROW_6,
+            Constants.EMPTY_ROW_7,
+            Constants.EMPTY_ROW_8,
+            Constants.EMPTY_ROW_9,
+            Constants.EMPTY_ROW_10,
             "   nkn  "}; 
 
         Board b2 = new Board(layout2);
@@ -105,10 +123,10 @@ public class StoryDatastore {
         String[] layout3 ={
             "RNBQKBNR", 
             "PPPPPPPP",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
+            Constants.EMPTY_ROW_11,
+            Constants.EMPTY_ROW_12,
+            Constants.EMPTY_ROW_13,
+            Constants.EMPTY_ROW_14,
             "pppppppp",
             "rnb kbnr"}; 
 
@@ -130,10 +148,10 @@ public class StoryDatastore {
             "PPPPKPPP", 
             "PPPPPPPP",
             "PPPPPPPP",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
+            Constants.EMPTY_ROW_15,
+            Constants.EMPTY_ROW_16,
+            Constants.EMPTY_ROW_17,
+            Constants.EMPTY_ROW_18,
             "rnbqkbnr"}; 
 
         Board b4 = new Board(layout4);
@@ -151,10 +169,10 @@ public class StoryDatastore {
         String[] layout5 ={
             "RNBQKBNR", 
             "PPPPPPPP",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
+            Constants.EMPTY_ROW_19,
+            Constants.EMPTY_ROW_20,
+            Constants.EMPTY_ROW_21,
+            Constants.EMPTY_ROW_22,
             "pppppppp",
             "rnbqkbnr"}; 
 
