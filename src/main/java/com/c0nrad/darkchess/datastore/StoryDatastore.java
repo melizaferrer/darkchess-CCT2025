@@ -27,6 +27,12 @@ public class StoryDatastore {
         Datastore d = MorphiaSingleton.GetDatastore();
         return d.createQuery(Story.class).field("level").equal(level).get();
     }
+    public class Constants {
+    public static final String EMPTY_ROW = "        ";
+    public static final String WHITE_PAWNS_ROW = "PPPPPPPP";
+    public static final String BLACK_PAWNS_ROW = "pppppppp";
+    public static final String LINE_BREAK = "\n";
+}
 
     public static void SeedLevels() throws InvalidBoardException, InvalidPieceException{
         Datastore d = MorphiaSingleton.GetDatastore();
@@ -42,12 +48,12 @@ public class StoryDatastore {
 
         String[] layout ={
             "    K   ", 
-            "PPPPPPPP",
-            "        ",
-            "        ",
-            "        ",
-            "        ",
-            "pppppppp",
+            Constants.WHITE_PAWNS_ROW,
+            Constants.EMPTY_ROW,
+            Constants.EMPTY_ROW,
+            Constants.EMPTY_ROW,
+            Constants.EMPTY_ROW,
+            Constants.BLACK_PAWNS_ROW,
             "    k   "}; 
 
         Board b = new Board(layout);
